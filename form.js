@@ -5,15 +5,21 @@ var questions = [
   {
     type: "input",
     name: "first_name",
-    label: "First Name",
+    label: "名前",
     message: "名前を入力して下さい"
   },
   {
     type: "input",
     name: "last_name",
-    label: "Last Name",
+    label: "苗字",
     message: "苗字を入力して下さい",
     default: function () { return "Doe"; }
+  },
+  {
+    type: "input",
+    name: "age",
+    label: "年齢",
+    message: "年齢を入力して下さい"
   }
 ];
 var answers = {};
@@ -42,7 +48,7 @@ function showList(){
     }
   ], function( result ) {
     if(result.form === "入力終了"){
-      
+      console.log( JSON.stringify(answers, null, "  ") );
       return;
     }
     
